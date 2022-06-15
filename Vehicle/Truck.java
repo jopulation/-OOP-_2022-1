@@ -1,4 +1,4 @@
-public class Truck extends Car {
+public class Truck extends Car implements DieselEngineMountable {
     private int load;
 
     public Truck() {
@@ -16,6 +16,11 @@ public class Truck extends Car {
     public void goForward(int speed) {
         super.goForward(speed);
         System.out.println("With cargo load: " + getLoad() + "kg");
+    }
+
+    @Override
+    public void putDieselEngine(int capacity) {
+        System.out.println("Putting in engine " + capacity + "cc");
     }
 
     public int getLoad() {

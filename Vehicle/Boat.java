@@ -1,4 +1,4 @@
-public class Boat extends Vehicle {
+public class Boat extends Vehicle implements DieselEngineMountable {
     private String place;
 
     public Boat() {
@@ -11,6 +11,11 @@ public class Boat extends Vehicle {
 
     public void harborAt(String harborName) {
         place = harborName;
+    }
+
+    @Override
+    public void putDieselEngine(int capacity) {
+        System.out.println("Putting im engine " + capacity + "cc in engine chamber.");
     }
 
     public void currentHarbor() {
