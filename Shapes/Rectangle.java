@@ -1,4 +1,4 @@
-public class Rectangle extends GraphicsObject {
+public class Rectangle implements Drawable {
     private int width;
     private int height;
 
