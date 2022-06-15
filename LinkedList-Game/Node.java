@@ -1,42 +1,42 @@
-public class Node {
-    private Object data;
-    private Node next;
+public class Node<T> {
+    private T data;
+    private Node<T> next;
 
     public Node() {
-        data = 0;
+        data = null;
         next = null;
     }
 
-    public Node(Object initialData) {
+    public Node(T initialData) {
         data = initialData;
         next = null;
     }
 
     /* getter anf setter */
 
-    public Object getData() {
+    public T getData() {
         return data;
     }
 
-    public void setData(Object d) {
+    public void setData(T d) {
         data = d;
     }
 
-    public Node getNext() {
+    public Node<T> getNext() {
         return next;
     }
 
-    public void setNext(Node n) {
+    public void setNext(Node<T> n) {
         next = n;
     }
 
     public static void main(String[] args) {
-        Node n = new Node(1);
+        Node<Integer> n = new Node(1);
 
-        Node n2 = new Node();
+        Node<Integer> n2 = new Node();
         n2.setData(10);
 
-        Node n3 = new Node();
+        Node<String> n3 = new Node();
         n3.setData("Hello");
 
         System.out.println("n: "+ n.getData());
