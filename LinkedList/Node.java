@@ -1,5 +1,5 @@
 public class Node {
-    private int data;
+    private Object data;
     private Node next;
 
     public Node() {
@@ -14,11 +14,11 @@ public class Node {
 
     /* getter anf setter */
 
-    public int getData() {
+    public Object getData() {
         return data;
     }
 
-    public void setData(int d) {
+    public void setData(Object d) {
         data = d;
     }
 
@@ -36,7 +36,11 @@ public class Node {
         Node n2 = new Node();
         n2.setData(10);
 
+        Node n3 = new Node();
+        n3.setData("Hello");
+
         System.out.println("n: "+ n.getData());
         System.out.println("n2: "+ n2.getData());
+        System.out.println("n3: "+ n3.getData());
     }
 }
