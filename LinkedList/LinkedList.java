@@ -5,23 +5,22 @@ public class LinkedList {
         head = null;
     }
 
-    public void addToTail(int element) {
-        Node endNode = new Node(element);
-
-        /* Case 1: when the list is empty */
+    public void addToTailRecursion(int data) {
         if (head == null) {
-            head = endNode;
-            return;
-        } 
-
-        /* Case 2: when the list is not empty */
-        Node node = head;
-
-        while (node.getNext() != null) {
-            node = node.getNext();
+            head = new Node(data);
         }
+        else {
+            addToTailImplementation(head, data);
+        }
+    }
 
-        node.setNext(endNode);
+    private void addToTailImplementation(Node n, int data){
+        if (n.getNext() == null) {  // reached the end of the list
+            n.setNext(new Node(data));
+        }
+        else {
+            addToTailImplementation(n.getNext(), data);
+        }
     }
 
     @Override
