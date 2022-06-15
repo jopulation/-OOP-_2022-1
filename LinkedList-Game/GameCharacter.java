@@ -41,6 +41,11 @@ public class GameCharacter implements Comparable<GameCharacter> {
     public boolean isDead() {
         return (healthPoint <= 0);
     }
+
+    public String toString() {
+        return "GameCharacter: " + getName();
+    }
+
     /* getters and setters */
 
     public String getName() {

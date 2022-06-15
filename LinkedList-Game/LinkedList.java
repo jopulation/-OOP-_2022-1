@@ -1,13 +1,13 @@
-public class LinkedList {
-    private Node head;
+public class LinkedList<T> {
+    private Node<T> head;
 
     public LinkedList() {
         head = null;
     }
 
-    public void addToTail(Object element) 
+    public void addToTail(T element) 
     {
-        Node endNode = new Node(element);
+        Node<T> endNode = new Node<T>(element);
 
         /* Case I: when the list is empty */
         if (head == null)
@@ -17,7 +17,7 @@ public class LinkedList {
         }
 
         /* Case II: when the list is not empty */
-        Node node = head;       
+        Node<T> node = head;       
 
         while (node.getNext() != null)
         {
@@ -27,25 +27,25 @@ public class LinkedList {
         node.setNext(endNode);
     }
 
-    public void addToTailRecursion(Object data) {
+    public void addToTailRecursion(T data) {
         if (head == null) {
-            head = new Node(data);
+            head = new Node<T>(data);
         }
         else {
             addToTailImplementation(head, data);
         }
     }
 
-    private void addToTailImplementation(Node n, Object data){
+    private void addToTailImplementation(Node<T> n, T data){
         if (n.getNext() == null) {  // reached the end of the list
-            n.setNext(new Node(data));
+            n.setNext(new Node<T>(data));
         }
         else {
             addToTailImplementation(n.getNext(), data);
         }
     }
 
-    public void delete(Object data) {
+    public void delete(T data) {
         /* case 1: empty list */
         if (getHead() == null) {
             return;
@@ -58,7 +58,7 @@ public class LinkedList {
         }
 
         /* All the other cases */
-        Node node = head;
+        Node<T> node = head;
 
         while (node.getNext() != null) {
             if (node.getNext().getData().equals(data) == true) {
@@ -72,7 +72,7 @@ public class LinkedList {
     public String toString() {
         String s ="";
 
-        Node node = head;
+        Node<T> node = head;
 
         while (node != null) {
             s = s + node.getData() + " --> ";
@@ -85,11 +85,11 @@ public class LinkedList {
     }
 
     /* getter and setter */
-    public Node getHead() {
+    public Node<T> getHead() {
         return head;
     }
 
-    public void setHead(Node h) {
+    public void setHead(Node<T> h) {
         head = h;
     }
 }
