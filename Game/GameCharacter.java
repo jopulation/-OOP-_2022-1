@@ -1,4 +1,4 @@
-public class GameCharacter {
+public class GameCharacter implements Comparable<GameCharacter> {
     private String name;
 
     private int healthPoint;
@@ -14,6 +14,10 @@ public class GameCharacter {
     }
 
     /* Method */
+    @Override
+    public int compareTo(GameCharacter theOther) {
+        return healthPoint - theOther.getHealthPoint();
+    }
 
     public void printStatus() {
         System.out.println("Name: "+ name);
