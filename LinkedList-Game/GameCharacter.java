@@ -3,6 +3,7 @@ public class GameCharacter implements Comparable<GameCharacter> {
 
     private int healthPoint;
     private int strength;
+    private int dexterity;
 
     private GamePlay game;
 
@@ -11,6 +12,7 @@ public class GameCharacter implements Comparable<GameCharacter> {
         name = characterName;
         healthPoint = 50;
         strength = 50;
+        dexterity = 50;
     }
 
     /* Method */
@@ -23,6 +25,10 @@ public class GameCharacter implements Comparable<GameCharacter> {
         System.out.println("Name: "+ name);
         System.out.println("Health point: " + healthPoint);
         System.out.println("Strength: " + strength);
+    }
+
+    public boolean equals(GameCharacter obj) {
+        return getName().equals(obj.getName());
     }
 
     public int attack(GameCharacter opponent) {
