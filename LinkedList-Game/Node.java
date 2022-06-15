@@ -7,7 +7,7 @@ public class Node {
         next = null;
     }
 
-    public Node(int initialData) {
+    public Node(Object initialData) {
         data = initialData;
         next = null;
     }

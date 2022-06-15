@@ -19,6 +19,9 @@ public class Mage extends GameCharacter{
         opponent.setHealthPoint(opponent.getHealthPoint() - damage);
         return damage;
     }
+    public String toString() {
+        return "Mage: " + getName() + " with MP: " + getMagicPoint();
+    }
 
     /* getter and setters */
 

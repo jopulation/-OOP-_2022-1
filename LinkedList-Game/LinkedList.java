@@ -5,7 +5,29 @@ public class LinkedList {
         head = null;
     }
 
-    public void addToTailRecursion(int data) {
+    public void addToTail(Object element) 
+    {
+        Node endNode = new Node(element);
+
+        /* Case I: when the list is empty */
+        if (head == null)
+        {
+            head = endNode;
+            return;
+        }
+
+        /* Case II: when the list is not empty */
+        Node node = head;       
+
+        while (node.getNext() != null)
+        {
+            node = node.getNext();
+        }
+
+        node.setNext(endNode);
+    }
+
+    public void addToTailRecursion(Object data) {
         if (head == null) {
             head = new Node(data);
         }
@@ -14,7 +36,7 @@ public class LinkedList {
         }
     }
 
-    private void addToTailImplementation(Node n, int data){
+    private void addToTailImplementation(Node n, Object data){
         if (n.getNext() == null) {  // reached the end of the list
             n.setNext(new Node(data));
         }
@@ -23,14 +45,14 @@ public class LinkedList {
         }
     }
 
-    public void delete(int data) {
+    public void delete(Object data) {
         /* case 1: empty list */
         if (getHead() == null) {
             return;
         }
 
         /* 1st element to delete */
-        if (head.getData() == data) {
+        if (head.getData().equals(data) == true) {
             head = head.getNext();
             return;
         }
@@ -39,7 +61,7 @@ public class LinkedList {
         Node node = head;
 
         while (node.getNext() != null) {
-            if (node.getNext().getData() == data) {
+            if (node.getNext().getData().equals(data) == true) {
                 node.setNext(node.getNext().getNext());
             }
             node = node.getNext();
