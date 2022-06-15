@@ -10,5 +10,8 @@ public class LinkedListTest {
         
         l.addToTailRecursion(4);
         System.out.println(l);
+
+        l.delete(3);
+        System.out.println(l);
     }
 }

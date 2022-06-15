@@ -23,6 +23,29 @@ public class LinkedList {
         }
     }
 
+    public void delete(int data) {
+        /* case 1: empty list */
+        if (getHead() == null) {
+            return;
+        }
+
+        /* 1st element to delete */
+        if (head.getData() == data) {
+            head = head.getNext();
+            return;
+        }
+
+        /* All the other cases */
+        Node node = head;
+
+        while (node.getNext() != null) {
+            if (node.getNext().getData() == data) {
+                node.setNext(node.getNext().getNext());
+            }
+            node = node.getNext();
+        }
+    }
+
     @Override
     public String toString() {
         String s ="";
