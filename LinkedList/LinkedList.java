@@ -1,5 +1,3 @@
-package LinkedList;
-
 public class LinkedList {
     private Node head;
 
@@ -26,24 +24,6 @@ public class LinkedList {
         node.setNext(endNode);
     }
 
-    public void addToTailRecursive(int data) {
-        if(head == null) {
-            head = new Node(data);
-        }
-        else {
-            addToTailImplementation(head, data);
-        }
-    }
-
-    private void addToTailImplementation(Node n, int data) {
-        if(n.getNext() == null) {
-            n.setNext(new Node(data));
-        }
-        else {
-            addToTailImplementation(n.getNext(), data);
-        }
-    }
-
     @Override
     public String toString() {
         String s ="";
@@ -67,26 +47,5 @@ public class LinkedList {
 
     public void setHead(Node h) {
         head = h;
-    }
-
-    public void delete(int data) {
-        /* case 1: empty list */
-        if(getHead() == null) {
-            return;
-        }
-        /* 1st element to delete */
-        if(head.getData() == data) {
-            head = head.getNext();
-            return;
-        }
-        /* All the other cases */
-        Node node = head;
-
-        while (node.getNext() != null) {
-            if(node.getNext().getData() == data) {
-                node.setNext(node.getNext().getNext());
-            }
-            node = node.getNext();
-        }
     }
 }
