@@ -1,6 +1,7 @@
 public class GamePlay {
     /* instance variable */
-    GameCharacter player, monster;
+    private Mage player;
+    GameCharacter monster;
     private String gameName;
 
     // Radom number generator
@@ -20,7 +21,7 @@ public class GamePlay {
     }
     
     public void play() {
-        player = new GameCharacter("Foobar the Warrior");
+        player = new Mage("Foobar the Warrior");
         monster = new GameCharacter("Slime the Great");
     
         // pass instance information of GamePlay to GameCharacter instances
@@ -45,8 +46,9 @@ public class GamePlay {
     
             /* player attacks monster */
 
-            damage = player.attack(monster);
-            System.out.println(player.getName() + " attacks " + monster.getName());
+            // damage = player.attack(monster);
+            damage = player.castSpell(monster);
+            System.out.println(player.getName() + " casts a fireball to " + monster.getName());
             System.out.println(monster.getName() + " gets damage of " + damage);
     
             if(monster.isDead() == true) {
