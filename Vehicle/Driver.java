@@ -18,6 +18,26 @@ public class Driver {
         return name;
     }
 
+    public boolean hasBoat() {
+        return vehicle instanceof Boat;
+
+        //if (vehicle instanceof Boat)
+        //{
+        //    return true;
+        //}
+        //else
+        //{
+        //    return false;
+        //}
+    }
+
+    public void checkHarbor() {
+        if (hasBoat() == true) {
+            Boat b = (Boat)vehicle;
+            b.currentHarbor();
+        }
+    }
+
     public static void main(String[] args) {
         Driver carDriver = new Driver("john");
         Driver truckDriver = new Driver("jane");
@@ -29,14 +49,17 @@ public class Driver {
 
         System.out.println(carDriver.getName());
         carDriver.driveAtSpeed(100);
+        System.out.println(carDriver.hasBoat());
         System.out.println();
 
         System.out.println(truckDriver.getName());
         truckDriver.driveAtSpeed(80);
+        System.out.println(truckDriver.hasBoat());
         System.out.println();
 
         System.out.println(boatDriver.getName());
         boatDriver.driveAtSpeed(30);
+        boatDriver.checkHarbor();
         System.out.println();
     }
 }
