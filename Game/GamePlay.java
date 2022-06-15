@@ -29,7 +29,7 @@ public class GamePlay {
             }
 
             /* monster attacks player */
-            damage = player.attack(player);
+            damage = monster.attack(player);
             System.out.println(monster.getName() + " attacks " + player.getName());
             System.out.println(player.getName() + " gets damage of " + damage);
 
@@ -42,4 +42,6 @@ public class GamePlay {
         }
         System.out.println("### Game over at round " + round);
     }
+}
+
 }
